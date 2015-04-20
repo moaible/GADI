@@ -7,8 +7,6 @@
 //  Copyright (c) 2015年 Hiromi Motodera. All rights reserved.
 //
 
-private let googleAnalyticsTrackingID = ""
-
 public class GoogleAnalyticsSender {
     
     // MARK: Property
@@ -17,7 +15,7 @@ public class GoogleAnalyticsSender {
     
     // MARK: Initialize
     
-    public init(trackingID: String = googleAnalyticsTrackingID) {
+    public init(trackingID: String) {
         GAI.sharedInstance().trackUncaughtExceptions = true
         GAI.sharedInstance().dispatchInterval = 20
         GAI.sharedInstance().logger.logLevel = GAILogLevel.Verbose

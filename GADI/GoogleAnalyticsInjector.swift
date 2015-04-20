@@ -30,8 +30,8 @@ private let googleAnalyticsActionKey = "GA:Action"
 private let googleAnalyticsLabelKey = "GA:Label"
 
 public final class GoogleAnalyticsInjector {
-    public class func inject() {
-        let sender = GoogleAnalyticsSender()
+    public class func inject(trackingID: String) {
+        let sender = GoogleAnalyticsSender(trackingID:trackingID)
         var configInfos: [[String:String]] = NSArray(contentsOfFile:NSBundle.mainBundle().pathForResource(propertyListFileName, ofType:nil)!) as [[String:String]]
         
         for info in configInfos {
