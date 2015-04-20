@@ -10,5 +10,10 @@ d::Spec.new do |s|
   s.ios.deployment_target = "7.0"
   s.osx.deployment_target = "10.8"
   s.requires_arc 	= true
+  s.subspec 'MOAspects' do |ss|
+    ss.source_files = 'MOAspects/*.{h,m}'
+  end
+  s.subspec 'GoogleAnalytics-iOS-SDK' do |ss|
+    ss.source_files = 'GoogleAnalytics-iOS-SDK/*.{h}'
+  end
 end
-
