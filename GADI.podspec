@@ -13,5 +13,7 @@ Pod::Spec.new do |s|
   s.subspec 'MOAspects' do |ss|
     ss.source_files = 'MOAspects/*.{h,m}'
   end
-  s.subspec 'GoogleAnalytics_iOS_SDK'
+  s.subspec 'GoogleAnalytics_iOS_SDK' do |ss|
+    ss.source_files = 'GoogleAnalytics_iOS_SDK/*'
+  end
 end
