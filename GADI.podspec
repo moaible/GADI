@@ -1,4 +1,4 @@
-d::Spec.new do |s|
+Pod::Spec.new do |s|
   s.name         	= "GADI"
   s.version      	= "0.0.1"
   s.summary      	= "Google Analytics Dependency Injection"
