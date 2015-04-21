@@ -6,8 +6,10 @@
 //  Copyright (c) 2015年 HiromiMotodera. All rights reserved.
 //
 
-#ifndef GADIDemo_GADI_h
-#define GADIDemo_GADI_h
+#ifndef GADI_h
+#define GADI_h
 
+#import "GADInjector.h"
+#import "GADSender.h"
 
 #endif
