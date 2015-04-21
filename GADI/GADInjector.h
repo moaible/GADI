@@ -10,4 +10,6 @@
 
 @interface GADInjector : NSObject
 
++ (void)injectWithTrackingID:(NSString *)trackingID configPropertyListPath:(NSString *)path;
+
 @end

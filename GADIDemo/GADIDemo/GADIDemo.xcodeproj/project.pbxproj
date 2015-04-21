@@ -18,8 +18,6 @@
 		FA3F4BE11AE539A500EEF4C3 /* Apple@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA3F4BDE1AE539A500EEF4C3 /* Apple@2x.jpg */; };
 		FA3F4BE21AE539A500EEF4C3 /* Banana@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA3F4BDF1AE539A500EEF4C3 /* Banana@2x.jpg */; };
 		FA3F4BE31AE539A500EEF4C3 /* Orange@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA3F4BE01AE539A500EEF4C3 /* Orange@2x.jpg */; };
-		FA3F4BF21AE53D0200EEF4C3 /* GoogleAnalyticsInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F4BF01AE53D0200EEF4C3 /* GoogleAnalyticsInjector.swift */; };
-		FA3F4BF41AE53D0200EEF4C3 /* GoogleAnalyticsSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F4BF11AE53D0200EEF4C3 /* GoogleAnalyticsSender.swift */; };
 		FA3F4BF81AE53F1C00EEF4C3 /* GoogleAnalyticsConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3F4BF71AE53F1C00EEF4C3 /* GoogleAnalyticsConfig.plist */; };
 		FA3F4BFB1AE55ED900EEF4C3 /* GADInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F4BFA1AE55ED900EEF4C3 /* GADInjector.m */; };
 		FA3F4BFE1AE55EEC00EEF4C3 /* GADSender.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F4BFD1AE55EEC00EEF4C3 /* GADSender.m */; };
@@ -54,8 +52,6 @@
 		FA3F4BDF1AE539A500EEF4C3 /* Banana@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Banana@2x.jpg"; sourceTree = "<group>"; };
 		FA3F4BE01AE539A500EEF4C3 /* Orange@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Orange@2x.jpg"; sourceTree = "<group>"; };
 		FA3F4BEB1AE53B4300EEF4C3 /* GADIDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GADIDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		FA3F4BF01AE53D0200EEF4C3 /* GoogleAnalyticsInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAnalyticsInjector.swift; sourceTree = "<group>"; };
-		FA3F4BF11AE53D0200EEF4C3 /* GoogleAnalyticsSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAnalyticsSender.swift; sourceTree = "<group>"; };
 		FA3F4BF71AE53F1C00EEF4C3 /* GoogleAnalyticsConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoogleAnalyticsConfig.plist; sourceTree = "<group>"; };
 		FA3F4BF91AE55ED900EEF4C3 /* GADInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInjector.h; sourceTree = "<group>"; };
 		FA3F4BFA1AE55ED900EEF4C3 /* GADInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADInjector.m; sourceTree = "<group>"; };
@@ -197,8 +193,6 @@
 				FA3F4BFA1AE55ED900EEF4C3 /* GADInjector.m */,
 				FA3F4BFC1AE55EEC00EEF4C3 /* GADSender.h */,
 				FA3F4BFD1AE55EEC00EEF4C3 /* GADSender.m */,
-				FA3F4BF01AE53D0200EEF4C3 /* GoogleAnalyticsInjector.swift */,
-				FA3F4BF11AE53D0200EEF4C3 /* GoogleAnalyticsSender.swift */,
 			);
 			name = GADI;
 			path = ../../GADI;
@@ -354,8 +348,6 @@
 				FA3F4BD41AE5389800EEF4C3 /* AppDelegate.swift in Sources */,
 				FA3F4BDB1AE5398700EEF4C3 /* OrangeViewController.swift in Sources */,
 				FA3F4BFE1AE55EEC00EEF4C3 /* GADSender.m in Sources */,
-				FA3F4BF21AE53D0200EEF4C3 /* GoogleAnalyticsInjector.swift in Sources */,
-				FA3F4BF41AE53D0200EEF4C3 /* GoogleAnalyticsSender.swift in Sources */,
 				FA3F4BDA1AE5398700EEF4C3 /* BananaViewController.swift in Sources */,
 				FA3F4BD91AE5398700EEF4C3 /* AppleViewController.swift in Sources */,
 			);

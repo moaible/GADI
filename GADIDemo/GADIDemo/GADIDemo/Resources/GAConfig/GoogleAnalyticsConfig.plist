@@ -40,7 +40,7 @@
 	</dict>
 	<dict>
 		<key>Class</key>
-		<string>GADIDemo..BananaViewController</string>
+		<string>GADIDemo.BananaViewController</string>
 		<key>MethodSignature</key>
 		<string>viewDidAppear:</string>
 		<key>GA:Type</key>
@@ -62,7 +62,7 @@
 		<key>MethodSignature</key>
 		<string>didTapAppleButton</string>
 		<key>GA:Type</key>
-		<string>Action</string>
+		<string>Event</string>
 		<key>GA:Screen</key>
 		<string></string>
 		<key>GA:Category</key>
@@ -80,7 +80,7 @@
 		<key>MethodSignature</key>
 		<string>didTapBananaButton</string>
 		<key>GA:Type</key>
-		<string>Action</string>
+		<string>Event</string>
 		<key>GA:Screen</key>
 		<string></string>
 		<key>GA:Category</key>
@@ -98,7 +98,7 @@
 		<key>MethodSignature</key>
 		<string>didTapOrangeButton</string>
 		<key>GA:Type</key>
-		<string>Action</string>
+		<string>Event</string>
 		<key>GA:Screen</key>
 		<string></string>
 		<key>GA:Category</key>

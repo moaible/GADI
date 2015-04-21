@@ -49,9 +49,9 @@ typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
 {
     NSArray *configs = [[NSArray alloc] initWithContentsOfFile:path];
     for (NSDictionary *config in configs) {
-        NSAssert(config[GADClassKey], @"");
-        NSAssert(config[GADMethodSignatureKey], @"");
-        NSAssert(config[GADGoogleAnalyticsTypeKey], @"");
+        NSAssert(config[GADClassKey], @"Class should not be nil");
+        NSAssert(config[GADMethodSignatureKey], @"MethodSignature should not be nil");
+        NSAssert(config[GADGoogleAnalyticsTypeKey], @"GA:Type should not be nil");
         
         Class clazz = NSClassFromString(config[GADClassKey]);
         NSAssert(clazz, @"Not found class %@", config[GADClassKey]);
@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
                                                 label:config[GADGoogleAnalyticsLabelKey]];
             };
         } else {
-            NSAssert(NO, @"");
+            NSAssert(NO, @"GA:Type is Screen or Event");
         }
         
         switch (methodSignatureType) {
