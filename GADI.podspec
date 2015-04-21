@@ -6,14 +6,14 @@ Pod::Spec.new do |s|
   s.license      	= 'MIT'
   s.author       	= { "Hiromi Motodera" => "moai.motodera@gmail.com" }
   s.source       	= { :git => "https://github.com/MO-AI/GADI.git", :tag => "#{s.version}", :submodules => true }
-  s.source_files = 'GADI/*.{swift}'
-  s.ios.deployment_target = "8.0"
+  s.source_files = 'GADI/*.{h,m}'
+  s.ios.deployment_target = "7.0"
   s.osx.deployment_target = "10.8"
   s.requires_arc 	= true
   s.subspec 'MOAspects' do |ss|
     ss.source_files = 'MOAspects/*.{h,m}'
   end
-  s.subspec 'GoogleAnalytics_iOS_SDK' do |ss|
-    ss.source_files = 'GoogleAnalytics_iOS_SDK/*'
+  s.subspec 'GoogleAnalytics-iOS-SDK' do |ss|
+    ss.source_files = 'GoogleAnalytics-iOS-SDK/*'
   end
 end
