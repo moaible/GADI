@@ -21,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = self.navigationController
         self.window?.makeKeyAndVisible()
         
-        GoogleAnalyticsInjector.inject()
+        GADInjector.injectWithTrackingID(
+            "",
+            configPropertyListPath:NSBundle.mainBundle().pathForResource("GoogleAnalyticsConfig.plist", ofType: ""))
         
         return true
     }
