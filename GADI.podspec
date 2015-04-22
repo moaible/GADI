@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.source       	= { :git => "https://github.com/MO-AI/GADI.git", :tag => "#{s.version}", :submodules => true }
   s.source_files = 'GADI/*.{h,m}'
   s.ios.deployment_target = "5.0"
-  s.osx.deployment_target = "10.8"
   s.requires_arc 	= true
   s.subspec "GADI" do |ss|
     ss.dependency "MOAspects"
