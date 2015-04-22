@@ -27,13 +27,15 @@ NSString * const GADGoogleAnalyticsActionKey = @"GA:Action";
 
 NSString * const GADGoogleAnalyticsLabelKey = @"GA:Label";
 
-#pragma mark - Enum
+#pragma mark - Type
 
 typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
     GADMethodSignatureTypeUnknown = 0,
     GADMethodSignatureTypeClass,
     GADMethodSignatureTypeInstance
 };
+
+typedef void (^GADInjection)(NSString *trackingID);
 
 #pragma mark -
 
@@ -49,13 +51,11 @@ typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
 {
     NSArray *configs = [[NSArray alloc] initWithContentsOfFile:path];
     for (NSDictionary *config in configs) {
-        NSAssert(config[GADClassKey], @"Class should not be nil");
-        NSAssert(config[GADMethodSignatureKey], @"MethodSignature should not be nil");
-        NSAssert(config[GADGoogleAnalyticsTypeKey], @"GA:Type should not be nil");
+        if (![self isValidConfig:config]) {
+            return;
+        }
         
         Class clazz = NSClassFromString(config[GADClassKey]);
-        NSAssert(clazz, @"Not found class %@", config[GADClassKey]);
-        
         NSString *methodSignature = config[GADMethodSignatureKey];
         NSString *headString = [methodSignature substringWithRange:NSMakeRange(0, 1)];
         GADMethodSignatureType methodSignatureType = [self methodSignatureTypeWithString:headString];
@@ -74,31 +74,15 @@ typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
         
         // TODO: クラスがセレクタを保持してるかどうかのチェックでAssertion
         
-        NSString *googleAnalyticsType = config[GADGoogleAnalyticsTypeKey];
-        void (^injection)(void);
-        if ([googleAnalyticsType isEqualToString:@"Screen"]) {
-            injection = ^{
-                GADSender *sender = [[GADSender alloc] initWithTrackingID:trackingID];
-                [sender sendScreenTrackingWithScreenName:config[GADGoogleAnalyticsScreenKey]];
-            };
-        } else if ([googleAnalyticsType isEqualToString:@"Event"]) {
-            injection = ^{
-                GADSender *sender = [[GADSender alloc] initWithTrackingID:trackingID];
-                [sender sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
-                                               action:config[GADGoogleAnalyticsActionKey]
-                                                label:config[GADGoogleAnalyticsLabelKey]];
-            };
-        } else {
-            NSAssert(NO, @"GA:Type is Screen or Event");
-        }
-        
+        __weak typeof(self) weakSelf = self;
         switch (methodSignatureType) {
             case GADMethodSignatureTypeClass: {
                 [MOAspects hookClassMethodForClass:clazz
                                           selector:selector
                                    aspectsPosition:MOAspectsPositionAfter
                                         usingBlock:^{
-                                            injection();
+                                            [weakSelf injectionWithType:methodSignatureType
+                                                                 config:config](trackingID);
                                         }];
                 break;
             }
@@ -108,7 +92,8 @@ typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
                                              selector:selector
                                       aspectsPosition:MOAspectsPositionAfter
                                            usingBlock:^{
-                                               injection();
+                                               [weakSelf injectionWithType:methodSignatureType
+                                                                    config:config](trackingID);
                                            }];
                 break;
             }
@@ -118,6 +103,26 @@ typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
 
 #pragma mark - Private
 
++ (BOOL)isValidConfig:(NSDictionary *)config
+{
+    if (!config[GADClassKey]) {
+        NSAssert(config[GADClassKey], @"Class should not be nil");
+        return NO;
+    } else if (!config[GADMethodSignatureKey]) {
+        NSAssert(config[GADMethodSignatureKey], @"MethodSignature should not be nil");
+        return NO;
+    } else if (!config[GADGoogleAnalyticsTypeKey]) {
+        NSAssert(config[GADGoogleAnalyticsTypeKey], @"GA:Type should not be nil");
+        return NO;
+    } else if (NSClassFromString(config[GADClassKey])) {
+        NSAssert(NSClassFromString(config[GADClassKey]), @"Not found class %@",
+                 config[GADClassKey]);
+        return NO;
+    }
+    
+    return YES;
+}
+
 + (GADMethodSignatureType)methodSignatureTypeWithString:(NSString *)string
 {
     if ([string isEqualToString:@"+"]) {
@@ -126,6 +131,29 @@ typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
         return GADMethodSignatureTypeInstance;
     }
     return GADMethodSignatureTypeUnknown;
+}
+
++ (GADInjection)injectionWithType:(GADMethodSignatureType)type
+                           config:(NSDictionary *)config
+{
+    NSString *googleAnalyticsType = config[GADGoogleAnalyticsTypeKey];
+    GADInjection injection;
+    if ([googleAnalyticsType isEqualToString:@"Screen"]) {
+        injection = ^(NSString *trackingID){
+            GADSender *sender = [[GADSender alloc] initWithTrackingID:trackingID];
+            [sender sendScreenTrackingWithScreenName:config[GADGoogleAnalyticsScreenKey]];
+        };
+    } else if ([googleAnalyticsType isEqualToString:@"Event"]) {
+        injection = ^(NSString *trackingID){
+            GADSender *sender = [[GADSender alloc] initWithTrackingID:trackingID];
+            [sender sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
+                                           action:config[GADGoogleAnalyticsActionKey]
+                                            label:config[GADGoogleAnalyticsLabelKey]];
+        };
+    } else {
+        NSAssert(NO, @"GA:Type is Screen or Event");
+    }
+    return injection;
 }
 
 @end
