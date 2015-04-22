@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>Class</key>
+            <string></string>
+            <key></key>
+            <string></string>
+            <key>GA:Type</key>
+            <string>Screen</string>
+            <key>GA:Screen</key>
+            <string></string>
+            <key>GA:Category</key>
+            <string></string>
+            <key>GA:Action</key>
+            <string></string>
+            <key>GA:Label</key>
+            <string></string>
+            <key>GA:Value</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>Class</key>
+            <string></string>
+            <key></key>
+            <string></string>
+            <key>GA:Type</key>
+            <string>Event</string>
+            <key>GA:Screen</key>
+            <string></string>
+            <key>GA:Category</key>
+            <string></string>
+            <key>GA:Action</key>
+            <string></string>
+            <key>GA:Label</key>
+            <string></string>
+            <key>GA:Value</key>
+            <string></string>
+        </dict>
+    </array>
+</plist>
