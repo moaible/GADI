@@ -12,7 +12,7 @@ iOSでのGoogleAnalyticsによるトラッキング処理を外部から注入�
 
 ### Podfile
 
-`GADI`と`GoogleAnalytics-iOS-SDK`をPodfileに記載し、`pod install`する
+Podfileに以下を記述し、`pod install`する
 
 ```
 pod 'GADI'
