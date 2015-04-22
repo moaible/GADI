@@ -5,7 +5,7 @@
         <dict>
             <key>Class</key>
             <string></string>
-            <key></key>
+            <key>MethodSignature</key>
             <string></string>
             <key>GA:Type</key>
             <string>Screen</string>
@@ -23,7 +23,7 @@
         <dict>
             <key>Class</key>
             <string></string>
-            <key></key>
+            <key>MethodSignature</key>
             <string></string>
             <key>GA:Type</key>
             <string>Event</string>
