@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "5.0"
   s.requires_arc 	= true
   s.subspec "GADI" do |ss|
-    ss.dependency "MOAspects"
+    ss.dependency "MOAspects", '> 2.0.3'
   end
 end
