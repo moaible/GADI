@@ -12,6 +12,5 @@ Pod::Spec.new do |s|
   s.requires_arc 	= true
   s.subspec "GADI" do |ss|
     ss.dependency "MOAspects"
-    ss.dependency "GoogleAnalytics-iOS-SDK"
   end
 end
