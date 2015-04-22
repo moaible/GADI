@@ -16,7 +16,6 @@ Podfileに以下を記述し、`pod install`する
 
 ```
 pod 'GADI'
-pod 'GoogleAnalytics-iOS-SDK'
 ```
 
 ### 設定ファイルのインポート
