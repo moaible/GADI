@@ -11,7 +11,7 @@ import UIKit
 class OrangeViewController: UIViewController {
     
     var orangeImage = UIImage(named:"Orange.jpg")!
-    var orangeButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+    var orangeButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     
     // MARK: View life cycle
     

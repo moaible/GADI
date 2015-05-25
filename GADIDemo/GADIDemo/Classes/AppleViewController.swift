@@ -11,7 +11,7 @@ import UIKit
 class AppleViewController: UIViewController {
     
     var appleImage = UIImage(named:"Apple.jpg")!
-    var appleButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+    var appleButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     
     // MARK: View life cycle
     
