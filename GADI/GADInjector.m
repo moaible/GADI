@@ -114,7 +114,7 @@ typedef void (^GADInjection)(NSString *trackingID);
     } else if (!config[GADGoogleAnalyticsTypeKey]) {
         NSAssert(config[GADGoogleAnalyticsTypeKey], @"GA:Type should not be nil");
         return NO;
-    } else if (NSClassFromString(config[GADClassKey])) {
+    } else if (!NSClassFromString(config[GADClassKey])) {
         NSAssert(NSClassFromString(config[GADClassKey]), @"Not found class %@",
                  config[GADClassKey]);
         return NO;
