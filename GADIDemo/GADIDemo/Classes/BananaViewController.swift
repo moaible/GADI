@@ -11,7 +11,7 @@ import UIKit
 class BananaViewController: UIViewController {
     
     var bananaImage = UIImage(named:"Banana.jpg")!
-    var bananaButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+    var bananaButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
     
     // MARK: View life cycle
     
