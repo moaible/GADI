@@ -39,7 +39,8 @@
 
 - (void)sendScreenTrackingWithScreenName:(NSString *)screenName
 {
-    NSMutableDictionary *build = [[[GAIDictionaryBuilder createAppView] set:screenName forKey:kGAIScreenName] build];
+    NSMutableDictionary *build = [[[GAIDictionaryBuilder createScreenView] set:screenName
+                                                                        forKey:kGAIScreenName] build];
     [self.tracker send:build];
 }
 
