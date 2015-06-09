@@ -9,6 +9,8 @@
 #import "GADInjector.h"
 
 #import "GADSender.h"
+#import <GoogleAnalytics-iOS-SDK/GAI.h>
+#import <GoogleAnalytics-iOS-SDK/GAILogger.h>
 #import <MOAspects/MOAspects.h>
 
 #pragma mark - Config Keys
@@ -99,6 +101,11 @@ typedef void (^GADInjection)(NSString *trackingID);
             }
         }
     }
+}
+
++ (void)setLogLevel:(GADLogLevel)level
+{
+    [[[GAI sharedInstance] logger] setLogLevel:level];
 }
 
 #pragma mark - Private
