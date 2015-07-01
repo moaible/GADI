@@ -105,7 +105,7 @@ typedef void (^GADInjection)(NSString *trackingID);
 
 + (void)setLogLevel:(GADLogLevel)level
 {
-    [[[GAI sharedInstance] logger] setLogLevel:level];
+    [[[GAI sharedInstance] logger] setLogLevel:(GAILogLevel)level];
 }
 
 #pragma mark - Private
