@@ -29,7 +29,6 @@
     if (self) {
         [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
         [[GAI sharedInstance] setDispatchInterval:20];
-        [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
         _tracker = [[GAI sharedInstance] trackerWithTrackingId:trackingID];
     }
     return self;
