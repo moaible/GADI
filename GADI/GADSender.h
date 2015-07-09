@@ -10,7 +10,7 @@
 
 @interface GADSender : NSObject
 
-- (instancetype)initWithTrackingID:(NSString *)trackingID;
++ (instancetype)sharedSender;
 
 - (void)sendScreenTrackingWithScreenName:(NSString *)screenName;
 

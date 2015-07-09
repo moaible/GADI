@@ -17,39 +17,61 @@
 
 @property (nonatomic) id<GAITracker> tracker;
 
+@property (nonatomic) NSString *trackingID;
+
 @end
 
 @implementation GADSender
 
 #pragma mark - Initialize
 
-- (instancetype)initWithTrackingID:(NSString *)trackingID
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
-        [[GAI sharedInstance] setDispatchInterval:20];
-        _tracker = [[GAI sharedInstance] trackerWithTrackingId:trackingID];
+        
     }
     return self;
+}
+
++ (instancetype)sharedSender
+{
+    static dispatch_once_t onceToken;
+    static GADSender *sender;
+    dispatch_once(&onceToken, ^{
+        sender = [[GADSender alloc] init];
+        
+        [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
+        [[GAI sharedInstance] setDispatchInterval:20];
+    });
+    return sender;
 }
 
 #pragma mark - Public
 
 - (void)sendScreenTrackingWithScreenName:(NSString *)screenName
 {
+    id<GAITracker> tracker = [self trackerWithTrackingID:self.trackingID];
     NSMutableDictionary *build = [[[GAIDictionaryBuilder createScreenView] set:screenName
                                                                         forKey:kGAIScreenName] build];
-    [self.tracker send:build];
+    [tracker send:build];
 }
 
 - (void)sendEventTrackingWithCategory:(NSString *)category action:(NSString *)action label:(NSString *)label
 {
+    id<GAITracker> tracker = [self trackerWithTrackingID:self.trackingID];
     NSMutableDictionary *build = [[GAIDictionaryBuilder createEventWithCategory:category
                                                                          action:action
                                                                           label:label
                                                                           value:nil] build];
-    [self.tracker send:build];
+    [tracker send:build];
+}
+
+#pragma mark - Private
+
+- (id<GAITracker>)trackerWithTrackingID:(NSString *)trackingID
+{
+    return [[GAI sharedInstance] trackerWithTrackingId:trackingID];
 }
 
 @end

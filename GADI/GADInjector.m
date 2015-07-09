@@ -147,15 +147,13 @@ typedef void (^GADInjection)(NSString *trackingID);
     GADInjection injection;
     if ([googleAnalyticsType isEqualToString:@"Screen"]) {
         injection = ^(NSString *trackingID){
-            GADSender *sender = [[GADSender alloc] initWithTrackingID:trackingID];
-            [sender sendScreenTrackingWithScreenName:config[GADGoogleAnalyticsScreenKey]];
+            [[GADSender sharedSender] sendScreenTrackingWithScreenName:config[GADGoogleAnalyticsScreenKey]];
         };
     } else if ([googleAnalyticsType isEqualToString:@"Event"]) {
         injection = ^(NSString *trackingID){
-            GADSender *sender = [[GADSender alloc] initWithTrackingID:trackingID];
-            [sender sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
-                                           action:config[GADGoogleAnalyticsActionKey]
-                                            label:config[GADGoogleAnalyticsLabelKey]];
+            [[GADSender sharedSender] sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
+                                                             action:config[GADGoogleAnalyticsActionKey]
+                                                              label:config[GADGoogleAnalyticsLabelKey]];
         };
     } else {
         NSAssert(NO, @"GA:Type is Screen or Event");
