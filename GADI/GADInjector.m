@@ -182,12 +182,29 @@ typedef void (^GADInjection)(NSString *trackingID);
 {
     GADField *field = [[GADField alloc] init];
     
-    field.customDimensionIndex = config[GADGoogleAnalyticsCustomDimensionIndexKey];
-    field.customDimensionValue = config[GADGoogleAnalyticsCustomDimensionValueKey];
-    field.customMetricIndex = config[GADGoogleAnalyticsCustomMetricIndexKey];
-    field.customMetricValue = config[GADGoogleAnalyticsCustomMetricValueKey];
-    field.groupIndex = config[GADGoogleAnalyticsGroupIndexKey];
-    field.groupValue = config[GADGoogleAnalyticsGroupValueKey];
+    if (config[GADGoogleAnalyticsCustomDimensionIndexKey]) {
+        field.customDimensionIndex = @([config[GADGoogleAnalyticsCustomDimensionIndexKey] integerValue]);
+    }
+    
+    if (config[GADGoogleAnalyticsCustomDimensionValueKey]) {
+        field.customDimensionValue = config[GADGoogleAnalyticsCustomDimensionValueKey];
+    }
+    
+    if (config[GADGoogleAnalyticsCustomMetricIndexKey]) {
+        field.customMetricIndex = @([config[GADGoogleAnalyticsCustomMetricIndexKey] integerValue]);
+    }
+    
+    if (config[GADGoogleAnalyticsCustomMetricValueKey]) {
+        field.customMetricValue = config[GADGoogleAnalyticsCustomMetricValueKey];
+    }
+    
+    if (config[GADGoogleAnalyticsGroupIndexKey]) {
+        field.groupIndex = @([config[GADGoogleAnalyticsGroupIndexKey] integerValue]);
+    }
+    
+    if (config[GADGoogleAnalyticsGroupValueKey]) {
+        field.groupValue = config[GADGoogleAnalyticsGroupValueKey];
+    }
     
     return field;
 }
