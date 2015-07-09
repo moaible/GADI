@@ -29,6 +29,18 @@ NSString * const GADGoogleAnalyticsActionKey = @"GA:Action";
 
 NSString * const GADGoogleAnalyticsLabelKey = @"GA:Label";
 
+NSString * const GADGoogleAnalyticsCustomMetricIndexKey = @"GA:CustomMetricIndex";
+
+NSString * const GADGoogleAnalyticsCustomMetricValueKey = @"GA:CustomMetricValue";
+
+NSString * const GADGoogleAnalyticsCustomDimensionIndexKey = @"GA:CustomDimensionIndex";
+
+NSString * const GADGoogleAnalyticsCustomDimensionValueKey = @"GA:CustomDimensionValue";
+
+NSString * const GADGoogleAnalyticsGroupIndexKey = @"GA:GroupIndex";
+
+NSString * const GADGoogleAnalyticsGroupValueKey = @"GA:GroupValue";
+
 #pragma mark - Type
 
 typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
@@ -51,6 +63,9 @@ typedef void (^GADInjection)(NSString *trackingID);
 
 + (void)injectWithTrackingID:(NSString *)trackingID configPropertyListPath:(NSString *)path
 {
+    // Set google analytics tracking id here
+    [[GADSender sharedSender] setTrackingID:trackingID];
+    
     NSArray *configs = [[NSArray alloc] initWithContentsOfFile:path];
     for (NSDictionary *config in configs) {
         if (![self isValidConfig:config]) {
@@ -147,20 +162,51 @@ typedef void (^GADInjection)(NSString *trackingID);
     GADInjection injection;
     if ([googleAnalyticsType isEqualToString:@"Screen"]) {
         injection = ^(NSString *trackingID){
-            GADSender *sender = [[GADSender alloc] initWithTrackingID:trackingID];
-            [sender sendScreenTrackingWithScreenName:config[GADGoogleAnalyticsScreenKey]];
+            [[GADSender sharedSender] sendScreenTrackingWithScreenName:config[GADGoogleAnalyticsScreenKey]
+                                                                 field:[self fieldWithConfig:config]];
         };
     } else if ([googleAnalyticsType isEqualToString:@"Event"]) {
         injection = ^(NSString *trackingID){
-            GADSender *sender = [[GADSender alloc] initWithTrackingID:trackingID];
-            [sender sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
-                                           action:config[GADGoogleAnalyticsActionKey]
-                                            label:config[GADGoogleAnalyticsLabelKey]];
+            [[GADSender sharedSender] sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
+                                                             action:config[GADGoogleAnalyticsActionKey]
+                                                              label:config[GADGoogleAnalyticsLabelKey]
+                                                              field:[self fieldWithConfig:config]];
         };
     } else {
         NSAssert(NO, @"GA:Type is Screen or Event");
     }
     return injection;
+}
+
++ (GADField *)fieldWithConfig:(NSDictionary *)config
+{
+    GADField *field = [[GADField alloc] init];
+    
+    if (config[GADGoogleAnalyticsCustomDimensionIndexKey]) {
+        field.customDimensionIndex = @([config[GADGoogleAnalyticsCustomDimensionIndexKey] integerValue]);
+    }
+    
+    if (config[GADGoogleAnalyticsCustomDimensionValueKey]) {
+        field.customDimensionValue = config[GADGoogleAnalyticsCustomDimensionValueKey];
+    }
+    
+    if (config[GADGoogleAnalyticsCustomMetricIndexKey]) {
+        field.customMetricIndex = @([config[GADGoogleAnalyticsCustomMetricIndexKey] integerValue]);
+    }
+    
+    if (config[GADGoogleAnalyticsCustomMetricValueKey]) {
+        field.customMetricValue = config[GADGoogleAnalyticsCustomMetricValueKey];
+    }
+    
+    if (config[GADGoogleAnalyticsGroupIndexKey]) {
+        field.groupIndex = @([config[GADGoogleAnalyticsGroupIndexKey] integerValue]);
+    }
+    
+    if (config[GADGoogleAnalyticsGroupValueKey]) {
+        field.groupValue = config[GADGoogleAnalyticsGroupValueKey];
+    }
+    
+    return field;
 }
 
 @end

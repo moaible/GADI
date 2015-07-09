@@ -21,6 +21,7 @@
 		FA3F4BF81AE53F1C00EEF4C3 /* GoogleAnalyticsConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA3F4BF71AE53F1C00EEF4C3 /* GoogleAnalyticsConfig.plist */; };
 		FAD1DD0F1B4E0EF7004B304D /* GADInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD1DD0C1B4E0EF7004B304D /* GADInjector.m */; };
 		FAD1DD101B4E0EF7004B304D /* GADSender.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD1DD0E1B4E0EF7004B304D /* GADSender.m */; };
+		FAD1DD131B4E24FD004B304D /* GADField.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD1DD121B4E24FD004B304D /* GADField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		FAD1DD0C1B4E0EF7004B304D /* GADInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADInjector.m; sourceTree = "<group>"; };
 		FAD1DD0D1B4E0EF7004B304D /* GADSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADSender.h; sourceTree = "<group>"; };
 		FAD1DD0E1B4E0EF7004B304D /* GADSender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADSender.m; sourceTree = "<group>"; };
+		FAD1DD111B4E24FD004B304D /* GADField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADField.h; sourceTree = "<group>"; };
+		FAD1DD121B4E24FD004B304D /* GADField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +204,8 @@
 				FAD1DD0C1B4E0EF7004B304D /* GADInjector.m */,
 				FAD1DD0D1B4E0EF7004B304D /* GADSender.h */,
 				FAD1DD0E1B4E0EF7004B304D /* GADSender.m */,
+				FAD1DD111B4E24FD004B304D /* GADField.h */,
+				FAD1DD121B4E24FD004B304D /* GADField.m */,
 			);
 			name = GADI;
 			path = ../GADI;
@@ -348,6 +353,7 @@
 				FA3F4BDB1AE5398700EEF4C3 /* OrangeViewController.swift in Sources */,
 				FA3F4BDA1AE5398700EEF4C3 /* BananaViewController.swift in Sources */,
 				FAD1DD0F1B4E0EF7004B304D /* GADInjector.m in Sources */,
+				FAD1DD131B4E24FD004B304D /* GADField.m in Sources */,
 				FA3F4BD91AE5398700EEF4C3 /* AppleViewController.swift in Sources */,
 				FAD1DD101B4E0EF7004B304D /* GADSender.m in Sources */,
 			);
