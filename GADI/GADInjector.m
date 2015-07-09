@@ -29,6 +29,18 @@ NSString * const GADGoogleAnalyticsActionKey = @"GA:Action";
 
 NSString * const GADGoogleAnalyticsLabelKey = @"GA:Label";
 
+NSString * const GADGoogleAnalyticsCustomMetricIndexKey = @"GA:CustomMetricIndex";
+
+NSString * const GADGoogleAnalyticsCustomMetricValueKey = @"GA:CustomMetricValue";
+
+NSString * const GADGoogleAnalyticsCustomDimensionIndexKey = @"GA:CustomDimensionIndex";
+
+NSString * const GADGoogleAnalyticsCustomDimensionValueKey = @"GA:CustomDimensionValue";
+
+NSString * const GADGoogleAnalyticsGroupIndexKey = @"GA:GroupIndex";
+
+NSString * const GADGoogleAnalyticsGroupValueKey = @"GA:GroupValue";
+
 #pragma mark - Type
 
 typedef NS_ENUM(NSInteger, GADMethodSignatureType) {
@@ -150,18 +162,27 @@ typedef void (^GADInjection)(NSString *trackingID);
     GADInjection injection;
     if ([googleAnalyticsType isEqualToString:@"Screen"]) {
         injection = ^(NSString *trackingID){
-            [[GADSender sharedSender] sendScreenTrackingWithScreenName:config[GADGoogleAnalyticsScreenKey]];
+            [[GADSender sharedSender] sendScreenTrackingWithScreenName:config[GADGoogleAnalyticsScreenKey]
+                                                                 field:nil];
         };
     } else if ([googleAnalyticsType isEqualToString:@"Event"]) {
         injection = ^(NSString *trackingID){
             [[GADSender sharedSender] sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
                                                              action:config[GADGoogleAnalyticsActionKey]
-                                                              label:config[GADGoogleAnalyticsLabelKey]];
+                                                              label:config[GADGoogleAnalyticsLabelKey]
+                                                              field:nil];
         };
     } else {
         NSAssert(NO, @"GA:Type is Screen or Event");
     }
     return injection;
+}
+
++ (GADField *)fieldWithConfig:(NSDictionary *)config
+{
+    GADField *field = [[GADField alloc] init];
+    
+    return field;
 }
 
 @end

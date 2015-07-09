@@ -8,14 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+#import "GADField.h"
+
 @interface GADSender : NSObject
 
 @property (nonatomic) NSString *trackingID;
 
 + (instancetype)sharedSender;
 
-- (void)sendScreenTrackingWithScreenName:(NSString *)screenName;
+- (void)sendScreenTrackingWithScreenName:(NSString *)screenName
+                                   field:(GADField *)field;
 
-- (void)sendEventTrackingWithCategory:(NSString *)category action:(NSString *)action label:(NSString *)label;
+- (void)sendEventTrackingWithCategory:(NSString *)category
+                               action:(NSString *)action
+                                label:(NSString *)label
+                                field:(GADField *)field;
 
 @end

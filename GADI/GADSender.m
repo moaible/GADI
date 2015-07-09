@@ -46,16 +46,30 @@
 #pragma mark - Public
 
 - (void)sendScreenTrackingWithScreenName:(NSString *)screenName
+                                   field:(GADField *)field
 {
     id<GAITracker> tracker = [self trackerWithTrackingID:self.trackingID];
+    
+    if (field) {
+        [self updateTracker:tracker atField:field];
+    }
+    
     NSMutableDictionary *build = [[[GAIDictionaryBuilder createScreenView] set:screenName
                                                                         forKey:kGAIScreenName] build];
     [tracker send:build];
 }
 
-- (void)sendEventTrackingWithCategory:(NSString *)category action:(NSString *)action label:(NSString *)label
+- (void)sendEventTrackingWithCategory:(NSString *)category
+                               action:(NSString *)action
+                                label:(NSString *)label
+                                field:(GADField *)field
 {
     id<GAITracker> tracker = [self trackerWithTrackingID:self.trackingID];
+    
+    if (field) {
+        [self updateTracker:tracker atField:field];
+    }
+    
     NSMutableDictionary *build = [[GAIDictionaryBuilder createEventWithCategory:category
                                                                          action:action
                                                                           label:label
@@ -69,6 +83,24 @@
 {
     NSAssert(_trackingID && _trackingID.length > 0, @"should not be nil tracking ID");
     return [[GAI sharedInstance] trackerWithTrackingId:trackingID];
+}
+
+- (void)updateTracker:(id<GAITracker>)tracker atField:(GADField *)field
+{
+    if (field.customMetricIndex && field.customMetricValue) {
+        [tracker set:[GAIFields customMetricForIndex:field.customDimensionIndex.unsignedIntegerValue]
+               value:field.customMetricValue];
+    }
+    
+    if (field.customDimensionIndex && field.customDimensionValue) {
+        [tracker set:[GAIFields customDimensionForIndex:field.customDimensionIndex.unsignedIntegerValue]
+               value:field.customDimensionValue];
+    }
+    
+    if (field.groupIndex && field.groupValue) {
+        [tracker set:[GAIFields contentGroupForIndex:field.groupIndex.unsignedIntegerValue]
+               value:field.groupValue];
+    }
 }
 
 @end
