@@ -182,6 +182,13 @@ typedef void (^GADInjection)(NSString *trackingID);
 {
     GADField *field = [[GADField alloc] init];
     
+    field.customDimensionIndex = config[GADGoogleAnalyticsCustomDimensionIndexKey];
+    field.customDimensionValue = config[GADGoogleAnalyticsCustomDimensionValueKey];
+    field.customMetricIndex = config[GADGoogleAnalyticsCustomMetricIndexKey];
+    field.customMetricValue = config[GADGoogleAnalyticsCustomMetricValueKey];
+    field.groupIndex = config[GADGoogleAnalyticsGroupIndexKey];
+    field.groupValue = config[GADGoogleAnalyticsGroupValueKey];
+    
     return field;
 }
 

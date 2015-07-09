@@ -49,10 +49,7 @@
                                    field:(GADField *)field
 {
     id<GAITracker> tracker = [self trackerWithTrackingID:self.trackingID];
-    
-    if (field) {
-        [self updateTracker:tracker atField:field];
-    }
+    [self updateTracker:tracker atField:field];
     
     NSMutableDictionary *build = [[[GAIDictionaryBuilder createScreenView] set:screenName
                                                                         forKey:kGAIScreenName] build];
@@ -65,10 +62,7 @@
                                 field:(GADField *)field
 {
     id<GAITracker> tracker = [self trackerWithTrackingID:self.trackingID];
-    
-    if (field) {
-        [self updateTracker:tracker atField:field];
-    }
+    [self updateTracker:tracker atField:field];
     
     NSMutableDictionary *build = [[GAIDictionaryBuilder createEventWithCategory:category
                                                                          action:action
