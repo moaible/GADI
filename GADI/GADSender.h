@@ -10,6 +10,8 @@
 
 @interface GADSender : NSObject
 
+@property (nonatomic) NSString *trackingID;
+
 + (instancetype)sharedSender;
 
 - (void)sendScreenTrackingWithScreenName:(NSString *)screenName;

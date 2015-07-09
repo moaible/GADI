@@ -15,8 +15,6 @@
 
 @interface GADSender ()
 
-@property (nonatomic) NSString *trackingID;
-
 @end
 
 @implementation GADSender

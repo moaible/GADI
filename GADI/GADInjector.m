@@ -51,6 +51,9 @@ typedef void (^GADInjection)(NSString *trackingID);
 
 + (void)injectWithTrackingID:(NSString *)trackingID configPropertyListPath:(NSString *)path
 {
+    // Set google analytics tracking id here
+    [[GADSender sharedSender] setTrackingID:trackingID];
+    
     NSArray *configs = [[NSArray alloc] initWithContentsOfFile:path];
     for (NSDictionary *config in configs) {
         if (![self isValidConfig:config]) {
