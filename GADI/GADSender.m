@@ -15,8 +15,6 @@
 
 @interface GADSender ()
 
-@property (nonatomic) id<GAITracker> tracker;
-
 @property (nonatomic) NSString *trackingID;
 
 @end
@@ -71,6 +69,7 @@
 
 - (id<GAITracker>)trackerWithTrackingID:(NSString *)trackingID
 {
+    NSAssert(_trackingID && _trackingID.length > 0, @"should not be nil tracking ID");
     return [[GAI sharedInstance] trackerWithTrackingId:trackingID];
 }
 
