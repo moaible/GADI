@@ -6,4 +6,5 @@ inhibit_all_warnings!
 
 xcodeproj 'GADIDemo'
 
-pod 'GADI'
+pod 'MOAspects'
+pod 'GoogleAnalytics-iOS-SDK'
