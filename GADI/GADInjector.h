@@ -8,6 +8,36 @@
 
 #import <Foundation/Foundation.h>
 
+#import "GADField.h"
+
+#pragma mark - Config Keys
+ 
+FOUNDATION_EXPORT NSString * const GADClassKey;
+
+FOUNDATION_EXPORT NSString * const GADMethodSignatureKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsTypeKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsScreenKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCategoryKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsActionKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsLabelKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomMetricIndexKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomMetricValueKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomDimensionIndexKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomDimensionValueKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsGroupIndexKey;
+
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsGroupValueKey;
+
 typedef NS_ENUM(NSInteger, GADLogLevel) {
     GADLogLevelNone = 0,
     GADLogLevelError = 1,
@@ -18,7 +48,12 @@ typedef NS_ENUM(NSInteger, GADLogLevel) {
 
 @interface GADInjector : NSObject
 
-+ (void)injectWithTrackingID:(NSString *)trackingID configPropertyListPath:(NSString *)path;
++ (void)injectWithTrackingID:(NSString *)trackingID
+      configPropertyListPath:(NSString *)path;
+
++ (void)injectWithTrackingID:(NSString *)trackingID
+      configPropertyListPath:(NSString *)path
+                       block:(BOOL (^)(NSDictionary *, GADField *))block;
 
 + (void)setLogLevel:(GADLogLevel)level;
 
