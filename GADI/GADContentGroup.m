@@ -18,4 +18,9 @@
     return contentGroup;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<GADContentGroup index = %ld, value = %@>", self.index, self.value];
+}
+
 @end

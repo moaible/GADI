@@ -18,4 +18,9 @@
     return customMetric;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<GADCustomMetric index = %ld, value = %@>", self.index, self.value];
+}
+
 @end

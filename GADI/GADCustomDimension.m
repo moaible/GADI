@@ -18,4 +18,9 @@
     return customDimension;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<GADCustomDimension index = %ld, value = %@>", self.index, self.value];
+}
+
 @end
