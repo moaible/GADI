@@ -3,7 +3,7 @@
 //  GADIDemo
 //
 //  Created by HiromiMotodera on 7/9/15.
-//  Copyright (c) 2015 HiromiMotodera. All rights reserved.
+//  Copyright (c) 2015 MOAI. All rights reserved
 //
 
 #import <Foundation/Foundation.h>
