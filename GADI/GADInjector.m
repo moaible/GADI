@@ -209,6 +209,7 @@ typedef void (^GADInjection)(NSString *trackingID);
             [[GADSender sharedSender] sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
                                                              action:config[GADGoogleAnalyticsActionKey]
                                                               label:config[GADGoogleAnalyticsLabelKey]
+                                                              value:config[GADGoogleAnalyticsValueKey]
                                                               field:field];
         };
     } else {
