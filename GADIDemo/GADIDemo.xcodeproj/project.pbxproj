@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F6092971B53461700CE65A6 /* GADCustomDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6092961B53461700CE65A6 /* GADCustomDimension.m */; };
+		0F60929A1B53463B00CE65A6 /* GADCustomMetric.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6092991B53463B00CE65A6 /* GADCustomMetric.m */; };
+		0F60929D1B534BAD00CE65A6 /* GADContentGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F60929C1B534BAD00CE65A6 /* GADContentGroup.m */; };
 		D887A323E350EDB9AC42BA75 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FEB3DC739B47BA71B081FA /* libPods.a */; };
 		FA3F4BB91AE5385200EEF4C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3F4BB81AE5385200EEF4C3 /* Images.xcassets */; };
 		FA3F4BBC1AE5385200EEF4C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3F4BBA1AE5385200EEF4C3 /* LaunchScreen.xib */; };
@@ -35,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F6092951B53461700CE65A6 /* GADCustomDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomDimension.h; sourceTree = "<group>"; };
+		0F6092961B53461700CE65A6 /* GADCustomDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADCustomDimension.m; sourceTree = "<group>"; };
+		0F6092981B53463B00CE65A6 /* GADCustomMetric.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADCustomMetric.h; sourceTree = "<group>"; };
+		0F6092991B53463B00CE65A6 /* GADCustomMetric.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADCustomMetric.m; sourceTree = "<group>"; };
+		0F60929B1B534BAD00CE65A6 /* GADContentGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADContentGroup.h; sourceTree = "<group>"; };
+		0F60929C1B534BAD00CE65A6 /* GADContentGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GADContentGroup.m; sourceTree = "<group>"; };
 		174757136C0B753234557ED6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		39FEB3DC739B47BA71B081FA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		637CE9AFF3BF5167176C94B9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +215,12 @@
 				FAD1DD0E1B4E0EF7004B304D /* GADSender.m */,
 				FAD1DD111B4E24FD004B304D /* GADField.h */,
 				FAD1DD121B4E24FD004B304D /* GADField.m */,
+				0F6092951B53461700CE65A6 /* GADCustomDimension.h */,
+				0F6092961B53461700CE65A6 /* GADCustomDimension.m */,
+				0F6092981B53463B00CE65A6 /* GADCustomMetric.h */,
+				0F6092991B53463B00CE65A6 /* GADCustomMetric.m */,
+				0F60929B1B534BAD00CE65A6 /* GADContentGroup.h */,
+				0F60929C1B534BAD00CE65A6 /* GADContentGroup.m */,
 			);
 			name = GADI;
 			path = ../GADI;
@@ -351,10 +366,13 @@
 			files = (
 				FA3F4BD41AE5389800EEF4C3 /* AppDelegate.swift in Sources */,
 				FA3F4BDB1AE5398700EEF4C3 /* OrangeViewController.swift in Sources */,
+				0F60929D1B534BAD00CE65A6 /* GADContentGroup.m in Sources */,
 				FA3F4BDA1AE5398700EEF4C3 /* BananaViewController.swift in Sources */,
 				FAD1DD0F1B4E0EF7004B304D /* GADInjector.m in Sources */,
+				0F6092971B53461700CE65A6 /* GADCustomDimension.m in Sources */,
 				FAD1DD131B4E24FD004B304D /* GADField.m in Sources */,
 				FA3F4BD91AE5398700EEF4C3 /* AppleViewController.swift in Sources */,
+				0F60929A1B53463B00CE65A6 /* GADCustomMetric.m in Sources */,
 				FAD1DD101B4E0EF7004B304D /* GADSender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
