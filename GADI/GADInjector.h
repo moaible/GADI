@@ -34,9 +34,9 @@ FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomDimensionIndexKey;
 
 FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomDimensionValueKey;
 
-FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsGroupIndexKey;
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsContentGroupIndexKey;
 
-FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsGroupValueKey;
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsContentGroupValueKey;
 
 typedef NS_ENUM(NSInteger, GADLogLevel) {
     GADLogLevelNone = 0,

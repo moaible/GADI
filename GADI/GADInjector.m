@@ -37,9 +37,9 @@ NSString * const GADGoogleAnalyticsCustomDimensionIndexKey = @"GA:CustomDimensio
 
 NSString * const GADGoogleAnalyticsCustomDimensionValueKey = @"GA:CustomDimensionValue";
 
-NSString * const GADGoogleAnalyticsGroupIndexKey = @"GA:GroupIndex";
+NSString * const GADGoogleAnalyticsContentGroupIndexKey = @"GA:GroupIndex";
 
-NSString * const GADGoogleAnalyticsGroupValueKey = @"GA:GroupValue";
+NSString * const GADGoogleAnalyticsContentGroupValueKey = @"GA:GroupValue";
 
 #pragma mark - Tracking Types
 
@@ -219,28 +219,22 @@ typedef void (^GADInjection)(NSString *trackingID);
 {
     GADField *field = [[GADField alloc] init];
     
-    if (config[GADGoogleAnalyticsCustomDimensionIndexKey]) {
-//        field.customDimensionIndex = @([config[GADGoogleAnalyticsCustomDimensionIndexKey] integerValue]);
+    if (config[GADGoogleAnalyticsCustomDimensionIndexKey] && config[GADGoogleAnalyticsCustomDimensionValueKey]) {
+        [field addCustomDimension:
+         [GADCustomDimension customDimensionWithIndex:[config[GADGoogleAnalyticsCustomDimensionIndexKey] unsignedIntegerValue]
+                                                value:config[GADGoogleAnalyticsCustomDimensionValueKey]]];
     }
     
-    if (config[GADGoogleAnalyticsCustomDimensionValueKey]) {
-//        field.customDimensionValue = config[GADGoogleAnalyticsCustomDimensionValueKey];
+    if (config[GADGoogleAnalyticsCustomMetricIndexKey] && config[GADGoogleAnalyticsCustomMetricValueKey]) {
+        [field addCustomMetric:
+         [GADCustomMetric customMetricWithIndex:[config[GADGoogleAnalyticsCustomMetricIndexKey] unsignedIntegerValue]
+                                          value:config[GADGoogleAnalyticsCustomMetricValueKey]]];
     }
     
-    if (config[GADGoogleAnalyticsCustomMetricIndexKey]) {
-//        field.customMetricIndex = @([config[GADGoogleAnalyticsCustomMetricIndexKey] integerValue]);
-    }
-    
-    if (config[GADGoogleAnalyticsCustomMetricValueKey]) {
-//        field.customMetricValue = config[GADGoogleAnalyticsCustomMetricValueKey];
-    }
-    
-    if (config[GADGoogleAnalyticsGroupIndexKey]) {
-//        field.groupIndex = @([config[GADGoogleAnalyticsGroupIndexKey] integerValue]);
-    }
-    
-    if (config[GADGoogleAnalyticsGroupValueKey]) {
-//        field.groupValue = config[GADGoogleAnalyticsGroupValueKey];
+    if (config[GADGoogleAnalyticsContentGroupIndexKey] && config[GADGoogleAnalyticsContentGroupValueKey]) {
+        [field addContentGroup:
+         [GADContentGroup contentGroupWithIndex:[config[GADGoogleAnalyticsContentGroupIndexKey] unsignedIntegerValue]
+                                          value:config[GADGoogleAnalyticsContentGroupValueKey]]];
     }
     
     return field;
