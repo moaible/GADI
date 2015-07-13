@@ -10,4 +10,10 @@
 
 @interface GADCustomDimension : NSObject
 
+@property (nonatomic) NSUInteger index;
+
+@property (nonatomic, copy) NSString *value;
+
++ (instancetype)customDimensionWithIndex:(NSUInteger)index value:(NSString *)value;
+
 @end

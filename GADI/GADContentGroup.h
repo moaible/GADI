@@ -10,4 +10,10 @@
 
 @interface GADContentGroup : NSObject
 
+@property (nonatomic) NSUInteger index;
+
+@property (nonatomic, copy) NSString *value;
+
++ (instancetype)contentGroupWithIndex:(NSUInteger)index value:(NSString *)value;
+
 @end

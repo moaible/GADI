@@ -10,4 +10,12 @@
 
 @implementation GADContentGroup
 
++ (instancetype)contentGroupWithIndex:(NSUInteger)index value:(NSString *)value
+{
+    GADContentGroup *contentGroup = [[GADContentGroup alloc] init];
+    contentGroup.index = index;
+    contentGroup.value = value;
+    return contentGroup;
+}
+
 @end

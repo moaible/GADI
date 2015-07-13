@@ -10,4 +10,12 @@
 
 @implementation GADCustomMetric
 
++ (instancetype)customMetricWithIndex:(NSUInteger)index value:(NSString *)value
+{
+    GADCustomMetric *customMetric = [[GADCustomMetric alloc] init];
+    customMetric.index = index;
+    customMetric.value = value;
+    return customMetric;
+}
+
 @end

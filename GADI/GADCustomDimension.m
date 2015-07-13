@@ -10,4 +10,12 @@
 
 @implementation GADCustomDimension
 
++ (instancetype)customDimensionWithIndex:(NSUInteger)index value:(NSString *)value
+{
+    GADCustomDimension *customDimension = [[GADCustomDimension alloc] init];
+    customDimension.index = index;
+    customDimension.value = value;
+    return customDimension;
+}
+
 @end

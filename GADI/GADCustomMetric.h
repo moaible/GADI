@@ -10,4 +10,10 @@
 
 @interface GADCustomMetric : NSObject
 
+@property (nonatomic) NSUInteger index;
+
+@property (nonatomic, copy) NSString *value;
+
++ (instancetype)customMetricWithIndex:(NSUInteger)index value:(NSString *)value;
+
 @end
