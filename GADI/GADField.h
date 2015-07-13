@@ -8,18 +8,34 @@
 
 #import <Foundation/Foundation.h>
 
+#import "GADContentGroup.h"
+#import "GADCustomDimension.h"
+#import "GADCustomMetric.h"
+
 @interface GADField : NSObject
 
-@property (nonatomic) NSNumber *customMetricIndex;
+/**
+ * Google analytics custom metrics field objects
+ * @see GADCustomMetric
+ */
+@property (nonatomic, copy, readonly) NSArray *customMetrics;
 
-@property (nonatomic) NSString *customMetricValue;
+/**
+ * Google analytics custom dimension field objects
+ * @see GADCustomDimension
+ */
+@property (nonatomic, copy, readonly) NSArray *customDimensions;
 
-@property (nonatomic) NSNumber *customDimensionIndex;
+/**
+ * Google analytics content group field objects
+ * @see GADContentGroup
+ */
+@property (nonatomic, copy, readonly) NSArray *contentGroups;
 
-@property (nonatomic) NSString *customDimensionValue;
+- (void)addCustomDimension:(GADCustomDimension *)customDimension;
 
-@property (nonatomic) NSNumber *groupIndex;
+- (void)addCustomMetric:(GADCustomMetric *)customMetric;
 
-@property (nonatomic) NSString *groupValue;
+- (void)addContentGroup:(GADContentGroup *)contentGroup;
 
 @end

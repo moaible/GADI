@@ -81,20 +81,20 @@
 
 - (void)updateTracker:(id<GAITracker>)tracker atField:(GADField *)field
 {
-    if (field.customMetricIndex && field.customMetricValue) {
-        [tracker set:[GAIFields customMetricForIndex:field.customDimensionIndex.unsignedIntegerValue]
-               value:field.customMetricValue];
-    }
-    
-    if (field.customDimensionIndex && field.customDimensionValue) {
-        [tracker set:[GAIFields customDimensionForIndex:field.customDimensionIndex.unsignedIntegerValue]
-               value:field.customDimensionValue];
-    }
-    
-    if (field.groupIndex && field.groupValue) {
-        [tracker set:[GAIFields contentGroupForIndex:field.groupIndex.unsignedIntegerValue]
-               value:field.groupValue];
-    }
+//    if (field.customMetricIndex && field.customMetricValue) {
+//        [tracker set:[GAIFields customMetricForIndex:field.customDimensionIndex.unsignedIntegerValue]
+//               value:field.customMetricValue];
+//    }
+//    
+//    if (field.customDimensionIndex && field.customDimensionValue) {
+//        [tracker set:[GAIFields customDimensionForIndex:field.customDimensionIndex.unsignedIntegerValue]
+//               value:field.customDimensionValue];
+//    }
+//    
+//    if (field.groupIndex && field.groupValue) {
+//        [tracker set:[GAIFields contentGroupForIndex:field.groupIndex.unsignedIntegerValue]
+//               value:field.groupValue];
+//    }
 }
 
 @end
