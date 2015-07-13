@@ -26,6 +26,8 @@ FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsActionKey;
 
 FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsLabelKey;
 
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsValueKey;
+
 FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomMetricIndexKey;
 
 FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomMetricValueKey;
