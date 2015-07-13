@@ -82,4 +82,15 @@
     [self.mutableContentGroups addObject:contentGroup];
 }
 
+#pragma mark - Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:
+            @"<GADCustomDimension objects %@>\n<GADCustomMetric objects %@>\n<GADContentGroup objects %@>",
+            self.customDimensions,
+            self.customMetrics,
+            self.contentGroups];
+}
+
 @end
