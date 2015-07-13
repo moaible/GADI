@@ -3,7 +3,7 @@
 //  GADIDemo
 //
 //  Created by HiromiMotodera on 2015/04/21.
-//  Copyright (c) 2015年 HiromiMotodera. All rights reserved.
+//  Copyright (c) 2015 MOAI. All rights reserved
 //
 
 #import "GADSender.h"
@@ -81,19 +81,16 @@
 
 - (void)updateTracker:(id<GAITracker>)tracker atField:(GADField *)field
 {
-    if (field.customMetricIndex && field.customMetricValue) {
-        [tracker set:[GAIFields customMetricForIndex:field.customDimensionIndex.unsignedIntegerValue]
-               value:field.customMetricValue];
+    for (GADCustomDimension *customDimension in field.customDimensions) {
+        [tracker set:[GAIFields customDimensionForIndex:customDimension.index] value:customDimension.value];
     }
     
-    if (field.customDimensionIndex && field.customDimensionValue) {
-        [tracker set:[GAIFields customDimensionForIndex:field.customDimensionIndex.unsignedIntegerValue]
-               value:field.customDimensionValue];
+    for (GADCustomMetric *customMetric in field.customMetrics) {
+        [tracker set:[GAIFields customMetricForIndex:customMetric.index] value:customMetric.value];
     }
     
-    if (field.groupIndex && field.groupValue) {
-        [tracker set:[GAIFields contentGroupForIndex:field.groupIndex.unsignedIntegerValue]
-               value:field.groupValue];
+    for (GADContentGroup *contentGroup in field.contentGroups) {
+        [tracker set:[GAIFields contentGroupForIndex:contentGroup.index] value:contentGroup.value];
     }
 }
 

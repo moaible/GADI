@@ -3,7 +3,7 @@
 //  GADIDemo
 //
 //  Created by HiromiMotodera on 2015/04/21.
-//  Copyright (c) 2015年 HiromiMotodera. All rights reserved.
+//  Copyright (c) 2015 MOAI. All rights reserved
 //
 
 #import <Foundation/Foundation.h>
@@ -34,9 +34,9 @@ FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomDimensionIndexKey;
 
 FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsCustomDimensionValueKey;
 
-FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsGroupIndexKey;
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsContentGroupIndexKey;
 
-FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsGroupValueKey;
+FOUNDATION_EXPORT NSString * const GADGoogleAnalyticsContentGroupValueKey;
 
 typedef NS_ENUM(NSInteger, GADLogLevel) {
     GADLogLevelNone = 0,
