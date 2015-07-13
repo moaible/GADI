@@ -20,7 +20,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<GADContentGroup index = %ld, value = %@>", self.index, self.value];
+    return [NSString stringWithFormat:@"<GADContentGroup index = %lu, value = %@>", (unsigned long)self.index, self.value];
 }
 
 @end
