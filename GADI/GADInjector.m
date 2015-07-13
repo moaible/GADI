@@ -221,19 +221,19 @@ typedef void (^GADInjection)(NSString *trackingID);
     
     if (config[GADGoogleAnalyticsCustomDimensionIndexKey] && config[GADGoogleAnalyticsCustomDimensionValueKey]) {
         [field addCustomDimension:
-         [GADCustomDimension customDimensionWithIndex:[config[GADGoogleAnalyticsCustomDimensionIndexKey] unsignedIntegerValue]
+         [GADCustomDimension customDimensionWithIndex:[config[GADGoogleAnalyticsCustomDimensionIndexKey] integerValue]
                                                 value:config[GADGoogleAnalyticsCustomDimensionValueKey]]];
     }
     
     if (config[GADGoogleAnalyticsCustomMetricIndexKey] && config[GADGoogleAnalyticsCustomMetricValueKey]) {
         [field addCustomMetric:
-         [GADCustomMetric customMetricWithIndex:[config[GADGoogleAnalyticsCustomMetricIndexKey] unsignedIntegerValue]
+         [GADCustomMetric customMetricWithIndex:[config[GADGoogleAnalyticsCustomMetricIndexKey] integerValue]
                                           value:config[GADGoogleAnalyticsCustomMetricValueKey]]];
     }
     
     if (config[GADGoogleAnalyticsContentGroupIndexKey] && config[GADGoogleAnalyticsContentGroupValueKey]) {
         [field addContentGroup:
-         [GADContentGroup contentGroupWithIndex:[config[GADGoogleAnalyticsContentGroupIndexKey] unsignedIntegerValue]
+         [GADContentGroup contentGroupWithIndex:[config[GADGoogleAnalyticsContentGroupIndexKey] integerValue]
                                           value:config[GADGoogleAnalyticsContentGroupValueKey]]];
     }
     
