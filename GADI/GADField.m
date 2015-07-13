@@ -2,7 +2,7 @@
 //  GADField.m
 //  GADIDemo
 //
-//  Created by HiromiMotodera on 7/9/15.
+//  Created by HiromiMotodera on 2015/07/09.
 //  Copyright (c) 2015 MOAI. All rights reserved
 //
 
