@@ -20,7 +20,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<GADCustomMetric index = %lu, value = %@>", self.index, self.value];
+    return [NSString stringWithFormat:@"<GADCustomMetric index = %lu, value = %@>", (unsigned long)self.index, self.value];
 }
 
 @end
