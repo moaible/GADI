@@ -87,7 +87,14 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:
-            @"<GADCustomDimension objects %@>\n<GADCustomMetric objects %@>\n<GADContentGroup objects %@>",
+            @"<GADField fields"
+            @"\n"
+            @"  <GADCustomDimension objects %@>"
+            @"\n"
+            @"  <GADCustomMetric objects %@>"
+            @"\n"
+            @"  <GADContentGroup objects %@>"
+            @">",
             self.customDimensions,
             self.customMetrics,
             self.contentGroups];
