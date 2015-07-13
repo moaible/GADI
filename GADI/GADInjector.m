@@ -37,9 +37,9 @@ NSString * const GADGoogleAnalyticsCustomDimensionIndexKey = @"GA:CustomDimensio
 
 NSString * const GADGoogleAnalyticsCustomDimensionValueKey = @"GA:CustomDimensionValue";
 
-NSString * const GADGoogleAnalyticsContentGroupIndexKey = @"GA:GroupIndex";
+NSString * const GADGoogleAnalyticsContentGroupIndexKey = @"GA:ContentGroupIndex";
 
-NSString * const GADGoogleAnalyticsContentGroupValueKey = @"GA:GroupValue";
+NSString * const GADGoogleAnalyticsContentGroupValueKey = @"GA:ContentGroupValue";
 
 #pragma mark - Tracking Types
 
