@@ -93,6 +93,10 @@
     for (GADContentGroup *contentGroup in field.contentGroups) {
         [tracker set:[GAIFields contentGroupForIndex:contentGroup.index] value:contentGroup.value];
     }
+    
+    if (field.userID) {
+        [tracker set:@"&uid" value:field.userID];
+    }
 }
 
 @end
