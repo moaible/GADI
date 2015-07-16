@@ -59,6 +59,7 @@
 - (void)sendEventTrackingWithCategory:(NSString *)category
                                action:(NSString *)action
                                 label:(NSString *)label
+                                value:(NSNumber *)value
                                 field:(GADField *)field
 {
     id<GAITracker> tracker = [self trackerWithTrackingID:self.trackingID];
@@ -67,7 +68,7 @@
     NSMutableDictionary *build = [[GAIDictionaryBuilder createEventWithCategory:category
                                                                          action:action
                                                                           label:label
-                                                                          value:nil] build];
+                                                                          value:value] build];
     [tracker send:build];
 }
 
