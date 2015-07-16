@@ -22,6 +22,7 @@
 - (void)sendEventTrackingWithCategory:(NSString *)category
                                action:(NSString *)action
                                 label:(NSString *)label
+                                value:(NSNumber *)value
                                 field:(GADField *)field;
 
 @end
