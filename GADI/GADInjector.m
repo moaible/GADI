@@ -29,6 +29,8 @@ NSString * const GADGoogleAnalyticsActionKey = @"GA:Action";
 
 NSString * const GADGoogleAnalyticsLabelKey = @"GA:Label";
 
+NSString * const GADGoogleAnalyticsValueKey = @"GA:Value";
+
 NSString * const GADGoogleAnalyticsCustomMetricIndexKey = @"GA:CustomMetricIndex";
 
 NSString * const GADGoogleAnalyticsCustomMetricValueKey = @"GA:CustomMetricValue";
@@ -207,6 +209,7 @@ typedef void (^GADInjection)(NSString *trackingID);
             [[GADSender sharedSender] sendEventTrackingWithCategory:config[GADGoogleAnalyticsCategoryKey]
                                                              action:config[GADGoogleAnalyticsActionKey]
                                                               label:config[GADGoogleAnalyticsLabelKey]
+                                                              value:config[GADGoogleAnalyticsValueKey]
                                                               field:field];
         };
     } else {
