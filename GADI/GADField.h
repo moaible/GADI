@@ -32,6 +32,12 @@
  */
 @property (nonatomic, copy, readonly) NSArray *contentGroups;
 
+/**
+ * The user qunique identifier tracking parameter
+ * @see https://support.google.com/analytics/answer/3123662?hl=en
+ */
+@property (nonatomic, copy) NSString *userID;
+
 - (void)addCustomDimension:(GADCustomDimension *)customDimension;
 
 - (void)addCustomMetric:(GADCustomMetric *)customMetric;
