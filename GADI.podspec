@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         	= "GADI"
-  s.version      	= "0.2.1"
+  s.version      	= "0.2.2"
   s.summary      	= "Google Analytics Dependency Injection for iOS"
   s.homepage     	= "https://github.com/MO-AI/GADI"
   s.license      	= 'MIT'

@@ -94,10 +94,13 @@
             @"  <GADCustomMetric objects %@>"
             @"\n"
             @"  <GADContentGroup objects %@>"
+            @"\n"
+            @"  <User ID %@>"
             @">",
             self.customDimensions,
             self.customMetrics,
-            self.contentGroups];
+            self.contentGroups,
+            self.userID];
 }
 
 @end
