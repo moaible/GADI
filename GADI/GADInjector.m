@@ -9,8 +9,8 @@
 #import "GADInjector.h"
 
 #import "GADSender.h"
-#import <GoogleAnalytics-iOS-SDK/GAI.h>
-#import <GoogleAnalytics-iOS-SDK/GAILogger.h>
+#import <GoogleAnalytics/GAI.h>
+#import <GoogleAnalytics/GAILogger.h>
 #import <MOAspects/MOAspects.h>
 
 #pragma mark - Config Keys
